@@ -1,0 +1,119 @@
+/*------------------------------------------------------------------
+
+COLOR:	BLUE 	#987654;
+
+-------------------------------------------------------------------*/
+.overlay {
+	background: rgba(152,118,84,0.75);
+}
+.filter li a.active, .filter li a:hover, #video a, #about .services li:hover i, #services .services li:hover i, #services .facts li:hover, .owl-controls .owl-page, .owl-controls .owl-buttons div, #team .btm-detail, .progress-bar, #back-to-top, .contact-form .btn:hover, .slides-navigation a {
+	background: #987654;
+}
+#home .btn {
+	border-color: #987654;
+}
+#home .btn:hover {
+	background: #987654;
+	color: #fff;
+}
+.btn {
+	background: #fff;
+	color: #fff;
+	border-color: #987654;
+}
+.item-detail .btn:hover, .team-info:hover, header .active {
+	background: #987654;
+}
+.item-info .btn {
+	color: #987654;
+}
+.mouse .wheel:after {
+	background: #fff;
+}
+.ip-header {
+	background: #987654;
+}
+.btn:hover {
+	background: #987654;
+	color: #fff;
+	border-color: #fff;
+}
+.modal-header .close {
+	background: #987654;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	color: #987654;
+}
+.passion .btn {
+	border-color: #fff;
+	color: #fff;
+}
+.passion .btn:hover {
+	background: #987654;
+	color: #fff;
+	border-color: #fff;
+}
+.mouse {
+	background: #987654;
+}
+.intro-sec ul li:hover i {
+	color: #fff !important;
+}
+#intro ul li i, .expand, #about .services li .icon i, #services .services li .icon i, #services .facts li i {
+	color: #fff;
+}
+#about .services li:hover i, #services .services li:hover .icon i, #contact .con-info li {
+	color: #fff;
+}
+.ser-who i {
+	color: #987654;
+}
+.ser-who:hover i {
+	background: #987654;
+}
+.skills li:hover {
+	background: none !important;
+}
+#services .services li:nth-child(3) {
+	background: #987654;
+}
+#services .services li:nth-child(4) {
+	background: #987654;
+}
+header .active {
+	background: #987654;
+}
+.navbar-default .navbar-nav > .active > a {
+	color: #fff;
+}
+.under-contact .social_icons li a:hover, #clients .owl-buttons div:hover, #about .owl-controls .owl-buttons div:hover {
+	background: #987654;
+}
+#blog .small-tag {
+	background: #987654;
+}
+#blog .blog p span a {
+	color: #987654;
+}
+#tweet i {
+	color: #fff;
+}
+hr {
+	background: url(../../images/hr-line-2.png) no-repeat;
+}
+#tweet .follow:hover {
+	background: #987654;
+	border-color: #987654;
+}
+.contact-form .btn {
+	background: #987654;
+}
+.under-contact .con-info i, header .logo h3, #tweet p a {
+	color: #987654;
+}
+.comas {
+	background: url(../../images/comas-2.png) center center no-repeat;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+	background: #987654 !important;
+}

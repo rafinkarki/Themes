@@ -1,0 +1,16 @@
+/*Blank CSS*/
+.widget_recent_entries span.post-date {
+  color: #cccccc;
+  font-size: 12px;
+}
+.widget_recent_entries a {
+  float: right;
+  width: 100%;
+}
+#blog .cate li {
+  background: url(../images/bullet.png) left 14px no-repeat !important;
+  
+}
+#blog .right-bar .widget_recent_entries li {
+  margin-bottom: 20px;
+}
