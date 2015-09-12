@@ -80,7 +80,7 @@ h2 {
 	font-size: 32px;
 	font-weight: 300;
 	color: #525252;
-	text-align: center;
+	/*text-align: center;*/
 }
 h2 span {
 	font-weight: 700;
@@ -171,7 +171,7 @@ section {
 			HEADING TITTLE
 ========================================================*/
 .tittle {
-	text-align: center;
+	/*text-align: center;*/
 }
 .tittle hr {
 	margin: 20px auto;
@@ -808,14 +808,14 @@ header .active a {
 			FEATURES
 ========================================================*/
 #feature {
-	background: url(../images/background/feature-bg.jpg) top center fixed repeat-y;
+	background: url(../assets/images/background/feature-bg.jpg) top center fixed repeat-y;
 	background-size: cover;
 	margin-top: -5px;
 }
-#feature .owl-buttons div {
+.featured .owl-buttons div {
 	background: rgba(0,0,0,0.5);
 }
-#feature .owl-next {
+.featured .owl-next {
 	right: 0px;
 }
 #feature .overlay {
@@ -1242,21 +1242,21 @@ header .active a {
 	line-height: 25px;
 	font-size: 16px;
 }
-#about .progress {
+#about .progress,.skills .progress {
 	height: 40px;
 	background: #aaaaaa;
 }
-#about .progress-bar {
+#about .progress-bar,.skills .progress-bar {
 	text-align: left;
 }
-#about .progress-bar h5 {
+#about .progress-bar h5,.skills .progress-bar h5 {
 	font-size: 16px;
 	color: #fff;
 	margin-left: 10px;
 	text-shadow: 1px 1px 1px #898989;
 	display: inline-block;
 }
-#about .progress-bar span {
+#about .progress-bar span,.skills .progress-bar span {
 	text-align: right;
 	line-height: 40px;
 	font-size: 16px;
@@ -1413,7 +1413,7 @@ header .active a {
 			PASSION
 ========================================================*/
 .passion {
-	background: url(../images/background/passion-bg.jpg) fixed top center repeat-y;
+	/*background: url(../images/background/passion-bg.jpg) fixed top center repeat-y;*/
 	background-size: cover;
 	text-align: center;
 }
@@ -1702,19 +1702,19 @@ header .active a {
 #team {
 	background: url(../images/background/team-bg.jpg) no-repeat;
 	background-size: cover;
-	padding: 80px 0;
+	/*padding: 80px 0;*/
 }
-#team .team {
+#team .team,.team-mem .team {
 	text-align: center;
 	margin-top: 90px;
 	padding: 0 10px;
 }
-#team .t-img {
+#team .t-img,.team-mem .t-img {
 	float: left;
 	margin-right: 20px;
 	position: relative;
 }
-#team .rotate {
+#team .rotate,.team-mem .rotate {
 	width: 182px;
 	transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
@@ -1726,7 +1726,7 @@ header .active a {
 	overflow: hidden;
 	margin-left: 30px;
 }
-#team .rotate-none {
+#team .rotate-none,.team-mem .rotate-none {
 	transform: rotate(-45deg);
 	-moz-transform: rotate(-45deg);
 	-webkit-transform: rotate(-45deg);
@@ -1750,23 +1750,23 @@ header .active a {
 }
 #team .team img {
 }
-#team .team h5 {
+#team .team h5,.team-mem .team h5 {
 	margin-top: 0px;
 	font-size: 20px;
 	font-weight: bold;
 }
-#team .team p span {
+#team .team p span,.team-mem .team p span {
 	color: #aaaaaa;
 	font-style: italic;
 	margin-bottom: 20px;
 }
-#team .social_icons ul {
+#team .social_icons ul,.team-mem .social_icons ul {
 	text-align: right;
 }
-#team .social_icons ul a {
+#team .social_icons ul a,.team-mem .social_icons ul a {
 	color: #dddddd;
 }
-#team .btm-detail {
+#team .btm-detail,.team-mem .btm-detail {
 	position: absolute;
 	bottom: 0px;
 	background: #f2333a;
@@ -1774,10 +1774,10 @@ header .active a {
 	padding: 20px 0;
 	min-height: 150px;
 }
-#team .social_icons {
+#team .social_icons,.team-mem .social_icons {
 	margin-top: 35px;
 }
-#team .social_icons a {
+#team .social_icons a,.team-mem .social_icons a {
 	width: 36px;
 	font-size: 18px;
 	margin: 0px;
@@ -1785,18 +1785,18 @@ header .active a {
 	border-radius: 4px;
 	line-height: 36px !important;
 }
-#team .over h5 {
+#team .over h5,.team-mem .over h5 {
 	color: #fff;
 }
-#team .over span {
+#team .over span,.team-mem .over span {
 	color: #fff;
 }
-#team .owl-prev {
+#team .owl-prev,.team-mem .owl-prev {
 	position: absolute;
 	top: 45%;
 	left: -50px;
 }
-#team .owl-next {
+#team .owl-next,.team-mem .owl-next {
 	position: absolute;
 	top: 45%;
 	right: -50px;
@@ -1825,7 +1825,7 @@ header .active a {
 	-o-transition-duration: 0.8s;
 	transition-duration: 0.8s;
 }
-.team-info:hover p {
+.team-info:hover p,.team-info:hover .t_c {
 	color: #fff;
 	-webkit-transition-duration: 0.8s;
 	-moz-transition-duration: 0.8s;

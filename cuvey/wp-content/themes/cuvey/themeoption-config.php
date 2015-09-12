@@ -389,56 +389,20 @@ if (!class_exists('Redux_Framework_sample_config')) {
                     'title'     => __('Pages Options', 'cuvey'),
                     'desc'      => __('<p class="description">You can change pages layout and attributes.</p>', 'cuvey'),
                     'fields'    => array( 
-                         array( 
-                            'id'      => 'template_color', 
-                            'title'    => __( 'Page Section Background Option','cuvey'), 
-                            'desc' => __('Choose a background color option for section of archive,page and single pages.', 'cuvey') ,
-                            'type'    => 'select', 
-                            'options' => array(                    
-                                'white' => 'White Background', 
-                                'gray'   => 'Gray Background',                   
-                            ),
-                            'default' =>'white',
-                        ),                      
+                        
                         array(
-                            'id'        => 'single_blog',
-                            'type'      => 'select',
-                            'title'     => __('Single Blog Page Layout', 'cuvey'),
-                            'options'   => array(
-                                'left' =>'Single Blog with Left Sidebar',
-                                'right' =>'Single Blog with Right Sidebar',
-                                'fullwidth' =>'Single Blog Fullwidth',                                       
-                            ), 
-                            'default' =>'left',
+                            'id'        => 'share_single',
+                            'type'      => 'switch',
+                            'title'     => __('Share Buttons', 'cuvey'),
+                            'description' => __('Display share buttons in single post.', 'cuvey'),
+                            'default' =>1,
                         ),
+                      
                         array(
                             'id'        => 'archive_layout',
                             'type'      => 'select',
-                            'title'     => __('Archive Blog Page Layout', 'cuvey'),
-                            'options'   => array(
-                                '1' =>'One Column',
-                                '1l' =>'One Column Left Sidebar',
-                                '1r' =>'One Column Right Sidebar',
-                                '2' =>'Two Column',
-                                '2l' =>'Two Column Left Sidebar',
-                                '2r' =>'Two Column Right Sidebar',                                
-                                '3' =>'Three Column',
-                                '3l' =>'Three Column Left Sidebar',
-                                '3r' =>'Three Column Right Sidebar', 
-                                'm1' =>'Masonry One Column',
-                                'm2' =>'Masonry Two Column',
-                                'm3' =>'Masonry Three Column',
-                                't' =>'Timeline View',
-                                'tl' =>'Timeline Left Sidebar',
-                                'tr' =>'Timeline Right Sidebar',                                     
-                            ), 
-                            'default' =>'1',
-                        ),
-                        array(
-                            'id'        => 'shop_layout',
-                            'type'      => 'select',
-                            'title'     => __('Shop Page Layout', 'cuvey'),
-                            'description'     => __('Choose layout for product page and single product page.', 'cuvey'),
+                            'title'     => __('Archive Layout', 'cuvey'),
+                            'description'     => __('Choose layout for archive pages.', 'cuvey'),
                             'options'   => array(
                                 'fullwidth' =>'Page Fullwidth',
                                 'left' =>'Page with Left Sidebar',
@@ -498,21 +462,6 @@ ultricies. Donec mollis lorem vehicula.',
                         ),
 
                         array(
-                            'id'        => '404_color',
-                            'type'      => 'color',
-                            'title'     => __('404 Heading Color', 'cuvey'),
-                            'subtitle'  => __('Choose a color for title in 404 page.', 'cuvey'),
-                            
-                        ),
-                        array(
-                            'id'        => '404_footer',
-                            'type'      => 'switch',
-                            'title'     => __('Social Icons in 404 Page', 'cuvey'),
-                            'subtitle'  => __('Display social icons in footer', 'cuvey'),
-                            'default'   =>'1',
-                            
-                        ),
-                        array(
                             'id'        => 'comingsoon_image',
                             'type'      => 'media',
                             'title'     => __('Coming Soon Page Background Image', 'cuvey'),
@@ -523,7 +472,82 @@ ultricies. Donec mollis lorem vehicula.',
                         ),
                     )
                 );
-                        
+            $this->sections[] = array(
+                    'icon'      => 'el-icon-eye-open',
+                    'title'     => __('Home Slider Options', 'cuvey'),
+                    'desc'      => __('<p class="description">You can have complete settings on home slider.</p>', 'cuvey'),
+                    'fields'    => array( 
+                        array(
+                            'id'        => 'id_slider',
+                            'type'      => 'text',
+                            'title'     => __('Id in Slider', 'cuvey'),
+                            'description' => __('Give id of a section in home page where slider targets to roll down. Use same id as row id while creating section.', 'cuvey'), 
+                            'default'   =>__('index','cuvey'),
+                        ),
+                        array(
+                            'id'        => 'home_slider',
+                            'type'      => 'switch',
+                            'title'     => __('Home Slider', 'cuvey'),
+                            'description' => __('Hide/Show slider in page builder template page.', 'cuvey'),
+                            'default' =>1,
+                        ), 
+                        array(
+                            'id'        => 'image_slide1',
+                            'type'      => 'media',
+                            'title'     => __('Slide1 Image', 'cuvey'),
+                            'description' => __('Image displayed in first slide.', 'cuvey'),
+                        ), 
+                        array(
+                            'id'        => 'title_slide1',
+                            'type'      => 'text',
+                            'title'     => __('Slide1 Title', 'cuvey'),
+                            'description' => __('Title displayed in first slide.', 'cuvey'), 
+                            'default'   =>__('Hello & Welcome','cuvey'),
+                        ),
+                        array(
+                            'id'        => 'subtitle_slide1',
+                            'type'      => 'text',
+                            'title'     => __('Slide1 Subtitle', 'cuvey'),
+                            'description' => __('Subtitle displayed in first slide.', 'cuvey'), 
+                            'default'   =>'OUR TEAM IS DEDICATED TO WORK ON YOUR PROJECT'
+                        ),
+                        array(
+                            'id'        => 'text_slide1',
+                            'type'      => 'text',
+                            'title'     => __('Slide1 Block text', 'cuvey'),
+                            'description' => __('Block text displayed in first slide', 'cuvey'), 
+                            'default'   =>__('WE ARE DECIPLINED','cuvey'),
+                        ),
+                        array(
+                            'id'        => 'image_slide2',
+                            'type'      => 'media',
+                            'title'     => __('Slide2 Image', 'cuvey'),
+                            'description' => __('Image displayed in second slide.', 'cuvey'),
+                        ),
+                        array(
+                            'id'        => 'title_slide2',
+                            'type'      => 'text',
+                            'title'     => __('Slide2 Title', 'cuvey'),
+                            'description' => __('Title displayed in second slide.', 'cuvey'), 
+                            'default'   =>__('Hello & Welcome','cuvey'),
+                        ),
+                        array(
+                            'id'        => 'subtitle_slide2',
+                            'type'      => 'text',
+                            'title'     => __('Slide2 Subtitle', 'cuvey'),
+                            'description' => __('Subtitle displayed in second slide.', 'cuvey'), 
+                            'default'   =>__('OUR TEAM IS DEDICATED TO WORK ON YOUR PROJECT','cuvey'),
+                        ),
+                        array(
+                            'id'        => 'text_slide2',
+                            'type'      => 'text',
+                            'title'     => __('Slide2 Block text', 'cuvey'),
+                            'description' => __('Block text displayed in second slide', 'cuvey'), 
+                            'default'   =>__('WE ARE SMARTIANS','cuvey'),
+                        ),          
+                     
+                    )
+                );           
             $this->sections[] = array(
                 'icon'      => 'el-icon-th',
                 'title'     => __('Footer Options', 'cuvey'),

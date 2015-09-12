@@ -52,6 +52,7 @@ function cuvey_load_theme_assets() {
     wp_enqueue_script('superslides-js', get_template_directory_uri().'/assets/js/jquery.superslides.min.js', array(), FALSE, TRUE);
     wp_enqueue_script('hover-js', get_template_directory_uri().'/assets/js/bootstrap-hover-dropdown.min.js', array(), FALSE, TRUE);
     wp_enqueue_script('main-js', get_template_directory_uri().'/assets/js/main.js', array(), FALSE, TRUE);  
+    wp_enqueue_script('custom-js', get_template_directory_uri().'/assets/js/custom.js', array(), FALSE, TRUE);  
 
     // custom css append code here
     $inline_css='';

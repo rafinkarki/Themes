@@ -83,5 +83,5 @@
 })( window.jQuery || window.Zepto );
  jQuery(document).ready(function(){
   // Target your .container, .wrapper, .post, etc.
-  jQuery(".media").fitVids();
+  jQuery(".media_post").fitVids();
 });

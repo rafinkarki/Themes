@@ -34,7 +34,7 @@ if( ! class_exists( 'Fusion_Flickr_Widget' ) ) {
           // If this executes, something broke!
           return;
       
-        var s = '<ul class="row">';
+        var s = '';
         
         for (var i=0; i < rsp.photos.photo.length; i++) {
           photo = rsp.photos.photo[ i ];
@@ -47,12 +47,12 @@ if( ! class_exists( 'Fusion_Flickr_Widget' ) ) {
           
           s +=  '<li class="col-xs-3">' + '<a href="'+p_url+'" title="'+photo.title+'">'+ '<img class="img-responsive" src="' + t_url + '" alt="'+photo.title+'"/>' +'</a>'+'</li>';
         }
-        s+="</ul>";
+       
         document.write(s);
       }
       </script>
       <?php echo '<div class="flickr-feed">'; ?>
-      <?php echo '<ul>'; ?>
+      <?php echo '<ul class="row">'; ?>
       <script type="text/javascript" src="https://api.flickr.com/services/rest/?format=json&amp;method=flickr.photos.search&amp;user_id=<?php echo $screen_name; ?>&amp;api_key=<?php echo $api; ?>&amp;media=photos&amp;per_page=<?php echo $number; ?>&amp;privacy_filter=1"></script>
       <?php  echo '</ul>';?>
       <?php  echo '</div>';?>

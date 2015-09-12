@@ -1,174 +1,20 @@
 /*-----------------------------------------------------------------------------------*/
 /* 		Mian Js Start
 /*-----------------------------------------------------------------------------------*/
-$(document).ready(function($) {
+jQuery(document).ready(function(jQuery) {
 "use strict"
-/*-----------------------------------------------------------------------------------*/
-/* 		Flex Slider
-/*-----------------------------------------------------------------------------------*/
-$(document).ready()
-$(window).load(function() {
-  $('.flexslider').flexslider({
-    animation: "fade",
-    controlNav: "thumbnails",
-	slideshow: true
-});
-
-
-
-
-
-/*-----------------------------------------------------------------------------------*/
-/* 		Flex Slider
-/*-----------------------------------------------------------------------------------*/
-$('.flex-blog').flexslider({
-    animation: "fade",
-	easing: "swing",               //{NEW} String: Determines the easing method used in jQuery transitions. jQuery easing plugin is supported!
-	direction: "horizontal",        //String: Select the sliding direction, "horizontal" or "vertical"
-	reverse: false,                 //{NEW} Boolean: Reverse the animation direction
-	animationLoop: true,             //Boolean: Should the animation loop? If false, directionNav will received "disable" classes at either end
-	smoothHeight: false,            //{NEW} Boolean: Allow height of the slider to animate smoothly in horizontal mode  
-	startAt: 0,                     //Integer: The slide that the slider should start on. Array notation (0 = first slide)
-	slideshow: true,                //Boolean: Animate slider automatically
-	slideshowSpeed: 7000,           //Integer: Set the speed of the slideshow cycling, in milliseconds
-	animationSpeed: 600,            //Integer: Set the speed of animations, in milliseconds
-	initDelay: 0,                   //{NEW} Integer: Set an initialization delay, in milliseconds
-	randomize: false, 
-  });
-});
-
-
-
-
-
-
-/*-----------------------------------------------------------------------------------*/
-/*	ISOTOPE PORTFOLIO
-/*-----------------------------------------------------------------------------------*/
-$(document).ready(function () {
-    var $container = $('.portfolio-wrapper .items');
-    $container.imagesLoaded(function () {
-        $container.isotope({
-            itemSelector: '.item',
-            layoutMode: 'fitRows'
-        });
-	});
-    $('.filter li a').click(function () {
-        $('.filter li a').removeClass('active');
-        $(this).addClass('active');
-        var selector = $(this).attr('data-filter');
-        $container.isotope({
-            filter: selector
-        });
-        return false;
-    });
-});
-
-
-
-
-
-/*-----------------------------------------------------------------------------------*/
-/* 		Team Slider
-/*-----------------------------------------------------------------------------------*/
-$(document).ready(function() {
-  $("#owl-team").owlCarousel({
-      autoPlay: 3000, //Set AutoPlay to 3 seconds
-      items : 4,
-      itemsDesktop : [1199,3],
-      itemsDesktopSmall : [979,3],
-	  stopOnHover : true,
-      navigation : true, // Show next and prev buttons
-	  pagination : false,
-	  navigationText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
-  });
-});
-
-
-
-
-/*-----------------------------------------------------------------------------------*/
-/* 		CLIENT Slider
-/*-----------------------------------------------------------------------------------*/
-$(document).ready(function() {
-  $("#owl-client").owlCarousel({
-      autoPlay: 3000, //Set AutoPlay to 3 seconds
-      items : 4,
-      itemsDesktop : [1199,3],
-      itemsDesktopSmall : [979,3],
-	  stopOnHover : true,
-      navigation : true, // Show next and prev buttons
-	  pagination : false,
-	  navigationText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
-  });
-});
-
-
-
-
-
-/*-----------------------------------------------------------------------------------*/
-/* 		CLIENT Slider
-/*-----------------------------------------------------------------------------------*/
-$(document).ready(function() {
-  $("#owl-sevices").owlCarousel({
-      autoPlay: 3000, //Set AutoPlay to 3 seconds
-      items : 1,
-      itemsDesktop : [1199,1],
-	  singleItem : true,
-      itemsDesktopSmall : [979,1],
-	  stopOnHover : true,
-      navigation : true, // Show next and prev buttons
-	  pagination : false,
-	  navigationText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
-  });
-});
-
-
-
-
-/*-----------------------------------------------------------------------------------*/
-/* 		 Slider
-/*-----------------------------------------------------------------------------------*/
-$(document).ready(function() {
-  $(".owl-img").owlCarousel({
-      autoPlay: 3000, //Set AutoPlay to 3 seconds
-      items : 1,
-      itemsDesktop : [1199,1],
-	  singleItem : true,
-      itemsDesktopSmall : [979,1],
-	  stopOnHover : true,
-      navigation : true, // Show next and prev buttons
-	  pagination : false,
-	  navigationText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
-  });
-});
-
-
-
-
 
 /*-----------------------------------------------------------------------------------*/
 /*		STICKY NAVIGATION
 /*-----------------------------------------------------------------------------------*/
-$(document).ready(function(){
-    $(".sticky").sticky({topSpacing:0});
+jQuery(document).ready(function(){
+    jQuery(".sticky").sticky({topSpacing:0});
 });
 
 
 
 
 
-/*-----------------------------------------------------------------------------------*/
-/* 	ANIMATION
-/*-----------------------------------------------------------------------------------*/
-var wow = new WOW({
-    boxClass:     'wow',      // animated element css class (default is wow)
-    animateClass: 'animated', // animation css class (default is animated)
-    offset:       100,          // distance to the element when triggering the animation (default is 0)
-    mobile:       false        // trigger animations on mobile devices (true is default)
-});
-wow.init();
 
 
 
@@ -177,8 +23,8 @@ wow.init();
 /*-----------------------------------------------------------------------------------*/
 /* 	LOADER
 /*-----------------------------------------------------------------------------------*/
-$(window).load(function() {
-	$("#loader").delay(500).fadeOut("slow");
+jQuery(window).load(function() {
+	jQuery("#loader").delay(500).fadeOut("slow");
 });
 
 
@@ -187,15 +33,15 @@ $(window).load(function() {
 /*-----------------------------------------------------------------------------------*/
 /* 		Back to Top
 /*-----------------------------------------------------------------------------------*/
-$(window).scroll(function(){
- if($(window).scrollTop() > 1000){
-      $("#back-to-top");
+jQuery(window).scroll(function(){
+ if(jQuery(window).scrollTop() > 1000){
+      jQuery("#back-to-top");
     } else{
-      $("#back-to-top");
+      jQuery("#back-to-top");
     }
 });
-$('#back-to-top, .back-to-top').click(function() {
-      $('html, body').animate({ scrollTop:0 }, '1000');
+jQuery('#back-to-top, .back-to-top').click(function() {
+      jQuery('html, body').animate({ scrollTop:0 }, '1000');
       return false;
 });
 
@@ -212,20 +58,20 @@ $('#back-to-top, .back-to-top').click(function() {
 /*-----------------------------------------------------------------------------------*/
 /*    HOME 100% Height
 /*-----------------------------------------------------------------------------------*/
-$(function(){
-    var windowH = $(window).height();
-    var wrapperH = $('#home').height();
+jQuery(function(){
+    var windowH = jQuery(window).height();
+    var wrapperH = jQuery('#home').height();
     if(windowH > wrapperH) {                            
-        $('#home').css({'height':($(window).height())+'px'});
+        jQuery('#home').css({'height':(jQuery(window).height())+'px'});
     }                                                                               
-    $(window).resize(function(){
-        var windowH = $(window).height();
-        var wrapperH = $('#wrap').height();
+    jQuery(window).resize(function(){
+        var windowH = jQuery(window).height();
+        var wrapperH = jQuery('#wrap').height();
         var differenceH = windowH - wrapperH;
         var newH = wrapperH + differenceH;
-        var truecontentH = $('#home').height();
+        var truecontentH = jQuery('#home').height();
         if(windowH > truecontentH) {
-            $('#home').css('height', (newH)+'px');
+            jQuery('#home').css('height', (newH)+'px');
         }
 
     })          
@@ -248,14 +94,14 @@ $(function(){
 /*-----------------------------------------------------------------------------------*/
 /* 		NAVIGATION SMOOTH SCROLL
 /*-----------------------------------------------------------------------------------*/
-$('.menu nav ul a[href*=#]:not([href=#])').click(function() {
+jQuery('.menu nav ul a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
         || location.hostname == this.hostname) {
-      var target = $(this.hash);
-      var href = $.attr(this, 'href');
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      var target = jQuery(this.hash);
+      var href = jQuery.attr(this, 'href');
+      target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
       if (target.length) {
-        $('html,body').animate({
+        jQuery('html,body').animate({
          scrollTop: target.offset().top
         }, 1000, function () {
             window.location.hash = href;
@@ -265,26 +111,26 @@ $('.menu nav ul a[href*=#]:not([href=#])').click(function() {
     }
 });
 var navLinkIDs = "";
- $('.menu nav ul a[href*=#]:not([href=#])').each(function(index) {
+ jQuery('.menu nav ul a[href*=#]:not([href=#])').each(function(index) {
      if(navLinkIDs != "") {
          navLinkIDs += ", ";
      }
-     navLinkIDs += $('.menu nav ul a[href*=#]:not([href=#])').eq(index).attr("href");
+     navLinkIDs += jQuery('.menu nav ul a[href*=#]:not([href=#])').eq(index).attr("href");
  });
 if( navLinkIDs ) {
-   $(navLinkIDs).waypoint(function(direction) {
+   jQuery(navLinkIDs).waypoint(function(direction) {
        if(direction=='down') {
-           $('.menu nav ul a').parent().removeClass("active");
-           $('.menu nav ul a[href="#'+$(this).attr('id')+'"]').parent().addClass("active");
+           jQuery('.menu nav ul a').parent().removeClass("active");
+           jQuery('.menu nav ul a[href="#'+jQuery(this).attr('id')+'"]').parent().addClass("active");
        }
    }, { offset: 70 });
-    $(navLinkIDs).waypoint(function(direction) {
+    jQuery(navLinkIDs).waypoint(function(direction) {
        if(direction=='up') {
-           $('.menu nav ul a').parent().removeClass("active");
-           $('.menu nav ul a[href="#'+$(this).attr('id')+'"]').parent().addClass("active");
+           jQuery('.menu nav ul a').parent().removeClass("active");
+           jQuery('.menu nav ul a[href="#'+jQuery(this).attr('id')+'"]').parent().addClass("active");
        }
    }, {  offset: function() {
-       return -$(this).height() + 20;
+       return -jQuery(this).height() + 20;
    } });
 }
 
@@ -294,27 +140,27 @@ if( navLinkIDs ) {
 /*-----------------------------------------------------------------------------------*/
 /* 		Active Menu Item on Page Scroll
 /*-----------------------------------------------------------------------------------*/
-$(window).scroll(function(event) {
+jQuery(window).scroll(function(event) {
 		Scroll();
 });	
-$('.scroll a').click(function() {  
-		$('html, body').animate({scrollTop: $(this.hash).offset().top -10}, 1000);
+jQuery('.scroll a').click(function() {  
+		jQuery('html, body').animate({scrollTop: jQuery(this.hash).offset().top -10}, 1000);
 		return false;
 });
 // User define function
 function Scroll() {
 var contentTop      =   [];
 var contentBottom   =   [];
-var winTop      =   $(window).scrollTop();
+var winTop      =   jQuery(window).scrollTop();
 var rangeTop    =   200;
 var rangeBottom =   500;
-$('nav').find('.scroll a').each(function(){
-	contentTop.push( $( $(this).attr('href') ).offset().top);
-		contentBottom.push( $( $(this).attr('href') ).offset().top + $( $(this).attr('href') ).height() );
+jQuery('nav').find('.scroll a').each(function(){
+	contentTop.push( jQuery( jQuery(this).attr('href') ).offset().top);
+		contentBottom.push( jQuery( jQuery(this).attr('href') ).offset().top + jQuery( jQuery(this).attr('href') ).height() );
 })
-$.each( contentTop, function(i){
+jQuery.each( contentTop, function(i){
 	if ( winTop > contentTop[i] - rangeTop ){
-		$('nav li.scroll')
+		jQuery('nav li.scroll')
 		  .removeClass('active')
 			.eq(i).addClass('active');			
 		}}
@@ -324,22 +170,22 @@ $.each( contentTop, function(i){
 /*-----------------------------------------------------------------------------------*/
 /*    CONTACT FORM
 /*-----------------------------------------------------------------------------------*/
-$(document).ready(function () {
-      $('#contactForm .error').remove();
-      var form = $('#contactForm'); // contact form
-      var submit = $('#contactForm_submit'); // submit button
-      var alertx = $('.successMsg'); // alertx div for show alert message
+jQuery(document).ready(function () {
+      jQuery('#contactForm .error').remove();
+      var form = jQuery('#contactForm'); // contact form
+      var submit = jQuery('#contactForm_submit'); // submit button
+      var alertx = jQuery('.successMsg'); // alertx div for show alert message
       // form submit event
       form.on('submit', function (e) {
       var hasError = false;
-        $('.required').each(function () {
-            if (jQuery.trim($(this).val()) === '') {
-                $(this).parent().append('<span class="error"><i class="fa fa-exclamation-triangle"></i></span>');
+        jQuery('.required').each(function () {
+            if (jQuery.trim(jQuery(this).val()) === '') {
+                jQuery(this).parent().append('<span class="error"><i class="fa fa-exclamation-triangle"></i></span>');
                 hasError = true;
-            } else if ($(this).hasClass('email')) {
-                var emailReg = /^([\w-\.]+@([\w]+\.)+[\w]{2,4})?$/;
-                if (!emailReg.test(jQuery.trim($(this).val()))) {
-                    $(this).parent().append('<span class="error"><i class="fa fa-exclamation-triangle"></i></span>');
+            } else if (jQuery(this).hasClass('email')) {
+                var emailReg = /^([\w-\.]+@([\w]+\.)+[\w]{2,4})?jQuery/;
+                if (!emailReg.test(jQuery.trim(jQuery(this).val()))) {
+                    jQuery(this).parent().append('<span class="error"><i class="fa fa-exclamation-triangle"></i></span>');
                     hasError = true;
                 }
             }
@@ -347,7 +193,7 @@ $(document).ready(function () {
         if (!hasError) {
             e.preventDefault(); // prevent default form submit
           // sending ajax request through jQuery
-          $.ajax({
+          jQuery.ajax({
               url: 'js/inc/sendemail.php', // form action url
               type: 'POST', // form submit method get/post
               dataType: 'html', // request type html/json/xml
@@ -361,7 +207,7 @@ $(document).ready(function () {
                   alertx.html(data).fadeIn(1000); // fade in response data     
                   setTimeout(function() {
                     alertx.html(data).fadeOut(300);
-                    $('#formName, #formEmail,#phone,#web, #message').val('')
+                    jQuery('#formName, #formEmail,#phone,#web, #message').val('')
                     form.fadeIn(1800);
                 }, 4000);
               },
@@ -369,30 +215,21 @@ $(document).ready(function () {
                   console.log(e)
               }
           });
-          $('.required').val('');
+          jQuery('.required').val('');
         }
         return false;    
       });
       
-    $('#contactForm input').focus(function () {
-        $('#contactForm .error').remove();
+    jQuery('#contactForm input').focus(function () {
+        jQuery('#contactForm .error').remove();
     });
-    $('#contactForm textarea').focus(function () {
-        $('#contactForm .error').remove();
+    jQuery('#contactForm textarea').focus(function () {
+        jQuery('#contactForm .error').remove();
     });
 });
 
 
 
 
-/*-----------------------------------------------------------------------------------*/
-/* 		Parallax
-/*-----------------------------------------------------------------------------------*/
-jQuery(document).ready(function(){
-  jQuery.stellar({
-    horizontalScrolling: false,
-    scrollProperty: 'scroll',
-    positionProperty: 'position',
-  });
-});
+
 });

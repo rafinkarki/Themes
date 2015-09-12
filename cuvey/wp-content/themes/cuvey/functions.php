@@ -9,15 +9,15 @@ if (!defined('ABSPATH')) {echo '<h1>Forbidden</h1>'; exit();}
 global $cuvey_options;
 
 
-if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/inc/ReduxCore/framework.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/inc/ReduxCore/framework.php' );
+if ( !class_exists( 'ReduxFramework' ) && file_exists( get_template_directory() . '/inc/ReduxCore/framework.php' ) ) {
+    require_once( get_template_directory()  . '/inc/ReduxCore/framework.php' );
 }
-if ( !isset( $cuvey_options ) && file_exists( dirname( __FILE__ ) . '/themeoption-config.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/themeoption-config.php' );
+if ( !isset( $cuvey_options ) && file_exists( get_template_directory()  . '/themeoption-config.php' ) ) {
+    require_once( get_template_directory() . '/themeoption-config.php' );
 }
 
-if ( file_exists( dirname( __FILE__ ) . '/inc/panels-lite/panels-lite.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/inc/panels-lite/panels-lite.php' );
+if ( file_exists( get_template_directory() . '/inc/panels-lite/panels-lite.php' ) ) {
+    require_once( get_template_directory() . '/inc/panels-lite/panels-lite.php' );
 }
 require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 require_once( ABSPATH . 'wp-admin/includes/template.php' );
@@ -408,8 +408,8 @@ function cuvey_register_required_plugins() {
     $plugins = array(
  
         array(
-            'name'               => 'SiteOrigin Panels', // The plugin name.
-            'slug'               => 'siteorigin-panels', // The plugin slug (typically the folder name).
+            'name'               => __('SiteOrigin Panels', 'cuvey'),// The plugin name.
+            'slug'               => __('siteorigin-panels','cuvey'), // The plugin slug (typically the folder name).
             'source'             => get_stylesheet_directory() . '/inc/plugins/siteorigin-panels.zip', // The plugin source.
             'required'           => true, // If false, the plugin is only 'recommended' instead of required.
             'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
@@ -428,8 +428,8 @@ function cuvey_register_required_plugins() {
             'external_url'       => '', // If set, overrides default API URL and points to an external URL.
         ),
         array(
-            'name'               => 'Theme Addons', // The plugin name.
-            'slug'               => 'cuvey-addons', // The plugin slug (typically the folder name).
+            'name'               => __('Theme Addons', 'cuvey'),// The plugin name.
+            'slug'               => __('cuvey-addons','cuvey'), // The plugin slug (typically the folder name).
             'source'             => get_stylesheet_directory() . '/inc/plugins/cuvey-addons.zip', // The plugin source.
             'required'           => true, // If false, the plugin is only 'recommended' instead of required.
             'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
@@ -508,42 +508,31 @@ function cuvey_register_required_plugins() {
 }
 
 
-function cuvey_comment($comment, $args, $depth) {
-    $GLOBALS['comment'] = $comment;
-    extract($args, EXTR_SKIP);
+// How comments are displayed
+function avada_comment($comment, $args, $depth) { ?>
+    <?php $add_below = ''; ?>
+    <div <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
 
-?>
-    <li <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
-
-        <a class="pull-left" href="<?php echo get_comment_author_link(); ?>">
-            <img class="img-circle media-object" src="<?php echo get_avatar_url(get_avatar( $comment, $args['avatar_size'] )); ?>" alt="Generic placeholder image">
-        </a>
-
-        <?php if($depth>1): echo '<div class="media">'; else : echo'<div class="media-body">'; endif;?>
-            <h4 class="media-heading"><?php echo get_comment_author_link(); ?>
-            <?php comment_reply_link(array_merge( $args, array('reply_text' => 'Reply >>','depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-            </h4>
-            <p><?php comment_text(); ?></p>
-            <div class="comment-block">
-            <?php if ( $comment->comment_approved == '0' ) : ?>
-                <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.','cuvey' ); ?></em>
-                <br />
-            <?php endif; ?>
-
-                <div class="metas">
-                    <div class="date">
-                        <p><i class="fa fa-calendar"></i> <?php
-                        /* translators: 1: date, 2: time */
-                        printf( __('%1$s at %2$s','cuvey'), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)','cuvey' ), '  ', '' );
-                    ?></p> 
-                    </div>
-                </div>
+        <div class="media">
+            <div class="pull-left">
+                <?php echo get_avatar($comment, 90); ?>
             </div>
+
+            <div class="media-body">                
+                <h5 class="media-heading"><?php echo get_comment_author_link() ?></h5>
+                <?php printf( __( '%1$s at %2$s', 'Avada' ), get_comment_date(),  get_comment_time() ); ?><?php edit_comment_link(__(' - Edit', 'Avada'),'  ','') ?><?php comment_reply_link(array_merge( $args, array('reply_text' => __(' - Reply', 'Avada'), 'add_below' => 'comment', 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+          
+                <?php if ($comment->comment_approved == '0') : ?>
+                <em><?php echo __('Your comment is awaiting moderation.', 'Avada') ?></em>
+                <br />
+                <?php endif; ?>
+                <?php comment_text() ?>              
+
+            </div>
+
         </div>
-    </li>
-      
-<?php
-}
+
+<?php }
 
 function removeDemoModeLink() {
     if ( class_exists('ReduxFrameworkPlugin') ) {
@@ -598,8 +587,8 @@ $fields['row_container'] = array(
             
             ),
 );
-$fields['gradient'] = array(
-      'name'        => __('Gradient Effect', 'siteorigin-panels'),
+$fields['overlay'] = array(
+      'name'        => __('Overlay Effect', 'siteorigin-panels'),
       'type'        => 'checkbox',
       'group'       => 'design',
       'description' => __('If enabled, the background color will have gradient effect.', 'siteorigin-panels'),
@@ -628,17 +617,17 @@ add_filter( 'siteorigin_panels_row_style_fields', 'cuvey_row_style_fields');
 
 
 function cuvey_panels_row_container_start( $grid, $attributes ) {
-    if(isset($grid['style']['gradient']) && $grid['style']['gradient']==1)
-    echo '<div class="section-colorful">';    
+     
     if(isset($grid['style']['row_id']) && $grid['style']['row_id']!='' )
     echo '<div id="'.$grid['style']['row_id'].'">';
+    if(isset($grid['style']['overlay'])&& $grid['style']['overlay']==1)
+        echo '<div class="overlay">';
     if(isset($grid['style']['row_container']) && $grid['style']['row_container']!='container-row')
     echo '<div class="'.$grid['style']['row_container'].'">';
     if(isset($grid['style']['row_container']) && $grid['style']['row_container']=='container-row'){
     echo '<div class="container">';
     echo '<div class="row">';
-    }
-   
+    } 
 
 }
 
@@ -646,10 +635,11 @@ add_filter('siteorigin_panels_row_container_start', 'cuvey_panels_row_container_
 
 
 function cuvey_panels_row_container_end( $grid, $attributes ) { 
-    if(isset($grid['style']['gradient']) && $grid['style']['gradient']==1)
-    echo '</div>';
+    
     if(isset($grid['style']['row_id']) && $grid['style']['row_id']!='' )
     echo '</div>'; 
+    if(isset($grid['style']['overlay'])&& $grid['style']['overlay']==1)
+        echo '</div>';
      if(isset($grid['style']['row_container'])&& $grid['style']['row_container']!='container-row')
     echo '</div>';
     if(isset($grid['style']['row_container']) && $grid['style']['row_container']=='container-row'){
@@ -664,8 +654,7 @@ add_filter('siteorigin_panels_row_container_end', 'cuvey_panels_row_container_en
 
 function cuvey_row_style_attributes( $attributes, $args ) {
 
-    if( !empty( $args['parallax'] ) ) {
-        array_push($attributes['class'], 'section-parallax');       
+    if( !empty( $args['parallax'] ) ) {               
         $attributes['data-stellar-background-ratio']=$args['parallax_rate'];
         $attributes['data-stellar-vertical-offset']='true';
     }

@@ -4,19 +4,32 @@ if (!defined('ABSPATH')) {echo '<h1>Forbidden</h1>'; exit();} $pageid=get_the_ID
 <?php  global $cuvey_options; ?>
     <section class="under-contact">
         <?php if (isset($cuvey_options['footer_address'])&& $cuvey_options['footer_address']==1): ?>
+            <?php
+            if(($cuvey_options['f_email']!='' && $cuvey_options['f_phone']=='' && $cuvey_options['f_location']=='')
+                ||($cuvey_options['f_phone']!='' && $cuvey_options['f_location']=='' && !$cuvey_options['f_email']=='')
+                ||($cuvey_options['f_location']!='' && $cuvey_options['f_email']=='' && $cuvey_options['f_phone']=='')):
+                $class="col-md-12";
+            elseif(($cuvey_options['f_email']!='' && $cuvey_options['f_phone']!='' && $cuvey_options['f_location']=='')
+                ||($cuvey_options['f_phone']!='' && $cuvey_options['f_location']!='' && $cuvey_options['f_email']=='')
+                ||($cuvey_options['f_location']!='' && $cuvey_options['f_email']!='' && $cuvey_options['f_phone']=='')):
+                $class="col-md-6";
+            else:
+                $class="col-md-4";
+            endif;?>
           <div class="con-info">
             <div class="container">
               <ul class="row">
-                <?php if(isset($cuvey_options['f_email'])) :  ?> 
-                    <li class="col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s"> <i class="fa fa-envelope-o"></i>
+                <?php if(isset($cuvey_options['f_email']) && $cuvey_options['f_email']!='') :  ?> 
+                    <li class="<?php echo $class;?> wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s"> 
+                      <i class="fa fa-envelope-o"></i>
                       <p><?php echo esc_attr($cuvey_options['f_email']);?></p>
                     </li>
-                <?php endif;?><?php if(isset($cuvey_options['f_phone'])) :  ?> 
-                    <li class="col-md-3 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"> <i class="fa fa-phone"></i>
+                <?php endif;?><?php if(isset($cuvey_options['f_phone'])&& $cuvey_options['f_phone']!='') :  ?> 
+                    <li class="<?php echo $class;?> wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s"> <i class="fa fa-phone"></i>
                       <p><?php echo esc_attr($cuvey_options['f_phone']);?></p>
                     </li>
-                <?php endif;?><?php if(isset($cuvey_options['f_location'])) :  ?> 
-                    <li class="col-md-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.7s"> <i class="fa fa-map-marker"></i>
+                <?php endif;?><?php if(isset($cuvey_options['f_location'])&& $cuvey_options['f_location']!='') :  ?> 
+                    <li class="<?php echo $class;?> wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.7s"> <i class="fa fa-map-marker"></i>
                       <p><?php echo wp_kses_post($cuvey_options['f_location']);?></p>
                     </li>
                 <?php endif;?>

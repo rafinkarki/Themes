@@ -1,27 +1,20 @@
 <?php
-if(!function_exists('cuvey_related_media')){
-    function cuvey_related_media($h,$w){
+if(!function_exists('share_sinlge_post')){
+    function share_sinlge_post($args){
+        $soical_link_fb = 'http://www.facebook.com/sharer.php?m2w&s=100&p&#91;url&#93;=' . $args['link'] . '&p&#91;images&#93;&#91;0&#93;=http://www.gravatar.com/avatar/2f8ec4a9ad7a39534f764d749e001046.png&p&#91;title&#93;=' . rawurlencode( $args['title'] );
+        $soical_link_twitter = 'https://twitter.com/share?text=' . rawurlencode( $args['title'] ) . '&url=' . rawurlencode( $args['link'] );
+        $soical_link_google = 'https://plus.google.com/share?url=' . $args['link'] . '" onclick="javascript:window.open(this.href,\'\', \'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600\');return false;';
         ?>
-        <div class="ImageWrapper">         
-           <?php if ( get_post_gallery() ) :
-                $gallery = get_post_gallery( get_the_ID(), false ); ?> 
-                <div class="portfolio-media">                                           
-                  <div class="flexslider flex-direction-nav-on-top">
-                      <ul class="slides entry">                                  
-                        <?php foreach( $gallery['src'] AS $src ):
-                          $img_url = wp_get_attachment_image_src( $src); 
-                          $n_img = aq_resize( $src, $width = $w, $height = $h, $crop = true, $single = true, $upscale = true ); ?>
-                          <li><img class="img-responsive" src="<?php echo esc_url($n_img); ?>" alt="" /></li>                              
-                        <?php endforeach;?>
-                      </ul>                              
-                  </div>
-                </div>
-            <?php endif;?>
-            <?php if( has_post_thumbnail() && !get_post_gallery()):
-              $thumbnail = get_post_thumbnail_id();                        
-               $img_url = wp_get_attachment_image_src( $thumbnail,'full'); //get img URL
-            ?><div class="portfolio-media"> <img src="<?php echo esc_url($img_url[0]);?>" class="img-responsive"/></div> 
-            <?php endif;?>                      
+        <div class="share under-contact">
+          <h4><?php _e('SHARE THIS POST','cuvey');?></h4>
+          <div class="social_icons">
+            <ul>
+              <li class="facebook"> <a href="<?php echo esc_url($soical_link_fb);?>" target="_blank"><i class="fa fa-facebook"></i> </a> </li>
+              <li class="twitter"> <a href="<?php echo esc_url($soical_link_twitter);?>" target="_blank"><i class="fa fa-twitter"></i> </a> </li>
+              <li class="googleplus"> <a href="<?php echo esc_url($soical_link_google);?>" target="_blank"><i class="fa fa-google"></i> </a> </li>
+            </ul>
+          </div>
+          <div class="clearfix"></div>
         </div>
         <?php
   }

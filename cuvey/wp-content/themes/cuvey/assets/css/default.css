@@ -14,3 +14,55 @@
 #blog .right-bar .widget_recent_entries li {
   margin-bottom: 20px;
 }
+a.media_post iframe {
+  /* display: none; */
+  width: 100%;
+ 
+}
+.single_post .tags {
+  padding-top: 6px;
+  font-size: 18px;
+  margin-top: 25px;
+}
+.inner-blog .blog a h4 {	
+	margin-left: 0px !important;	
+}
+
+.single-post ul.children {
+  padding-left: 20px;
+}
+.single-post p.form-submit {
+  display: none;
+}
+p.no-comments {
+  text-align: center; 
+}
+.left-align{
+	text-align:left;
+}
+.right-align{
+	text-align:right;
+}
+.cuvey h1,.cuvey h3,.cuvey h4,.cuvey h5,.cuvey h6 {
+  font-family: 'Play', sans-serif; 
+  font-weight: 300;
+  color: #525252;
+  /*text-align: center;*/
+}
+.align-left{
+	text-align: left;
+}
+.align-right{
+	text-align: right;
+}
+.align-center{
+	text-align: center;
+}
+.owl-next {
+	right: 0px;
+}
+.textwidget p {
+	color: #999999;
+	line-height: 25px;
+	font-size: 16px;
+}

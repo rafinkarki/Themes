@@ -296,39 +296,7 @@ function cuvey_cmb_metaboxes( array $meta_boxes ) {
         'normal'   => 'high',
         'show_names' => true, // Show field names on the left
         'fields'     => array(
-            array( 
-                'id'      => $prefix . 'breadcrumb_option', 
-                'name'    => __( 'Page Breadcrumb Options','cuvey'), 
-                'type'    => 'select', 
-                'options' => array(
-                    'normal'   => 'Normal Breadcrumb',
-                    'bg_image' => 'Breadcrumb Backgroud Image',                    
-                )
-            ),
-            array(
-                'name' => __('Background Breadcrumb Image', 'cuvey') ,
-                'desc' => __('Upload an image or enter a URL. This works only for Breadcrumb Background Image style.', 'cuvey') ,
-                'id' => $prefix . 'breadcrumb_image',
-                'type' => 'file',
-            ) ,
-            array(
-                'name' => 'Title',
-                'desc' => 'You can set custom page title.',
-                'id' => $prefix . 'pagetitle_title',
-                'type' => 'text'
-            ),
-            array(
-                'name' => 'Subitle',
-                'desc' => 'You can set custom page title.',
-                'id' => $prefix . 'pagetitle_subtitle',
-                'type' => 'text'
-            ),
-            array(
-                'name' =>  __( 'Hide Social Icons', 'cuvey' ),
-                'desc' => 'Donot display social icons on footer area.Shows icons when footer icon setting is turned on.',                
-                'id' => $prefix . 'social_icons',
-                'type' => 'checkbox'
-            ),     
+             
             array(
                 'name'    => 'Featured Project',
                 'id'      => $prefix . 'featured_project',
@@ -426,40 +394,7 @@ function cuvey_cmb_metaboxes( array $meta_boxes ) {
             'normal'   => 'high',
             'show_names' => true, // Show field names on the left
             'fields'     => array(
-                 array( 
-                    'id'      => $prefix . 'breadcrumb_option', 
-                    'name'    => __( 'Page Breadcrumb Options','cuvey'), 
-                    'type'    => 'select', 
-                    'options' => array(
-                        'normal'   => 'Normal Breadcrumb',
-                        'bg_image' => 'Breadcrumb Backgroud Image',                    
-                    )
-                ),
-                array(
-                    'name' => __('Background Breadcrumb Image', 'cuvey') ,
-                    'desc' => __('Upload an image or enter a URL. This works only for Breadcrumb Background Image style.', 'cuvey') ,
-                    'id' => $prefix . 'breadcrumb_image',
-                    'type' => 'file',
-                ) ,
-                array(
-                    'name' => 'Title',
-                    'desc' => 'You can set custom page title.',
-                    'id' => $prefix . 'pagetitle_title',
-                    'type' => 'text'
-                ),
-                array(
-                    'name' => 'Subitle',
-                    'desc' => 'You can set custom page title.',
-                    'id' => $prefix . 'pagetitle_subtitle',
-                    'type' => 'text'
-                ),
-                array(
-                    'name' =>  __( 'Hide Social Icons', 'cuvey' ),
-                    'desc' => 'Donot display social icons on footer area.Shows icons when footer icon setting is turned on.',                
-                    'id' => $prefix . 'social_icons',
-                    'type' => 'checkbox'
-                ),     
-            	
+                
                 array(
                     'name' => 'Personal Facebook Url',
                     'desc' => 'Please enter the client\'s facebook url',
@@ -477,7 +412,14 @@ function cuvey_cmb_metaboxes( array $meta_boxes ) {
                     'desc' => 'Please enter the client\'s google url',
                     'id' => $prefix . 'google',
                     'type' => 'text_medium'
+                ), 
+                array(
+                    'name' => 'Personal Linkedin Url',
+                    'desc' => 'Please enter the client\'s linkedin url',
+                    'id' => $prefix . 'linkedin',
+                    'type' => 'text_medium'
                 ),           
+          
 
             )
         );
